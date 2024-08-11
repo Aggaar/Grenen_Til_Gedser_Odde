@@ -1,1 +1,1 @@
-[site](https://aggaar.github.io/grenen_til_gedser_odde)
+[site](https://aggaar.github.io/Grenen_Til_Gedser_Odde)
