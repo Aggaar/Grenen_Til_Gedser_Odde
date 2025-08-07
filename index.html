@@ -86,7 +86,7 @@
 
         /*LEAFLET*/
         #map { 
-            
+            height: 500px
             width: 100%;
             aspect-ratio: 1 / 1;
             border-radius: 1vw;
@@ -96,6 +96,8 @@
     <!-----------LEAFTLET----------------->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.min.js"></script>
+
 </head>
 <body>
     <div class="stor">
@@ -143,7 +145,7 @@
         <script>L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);</script>
         <!------GPX------->
         <script>
-        var url = 'https://raw.githubusercontent.com/Aggaar/grenentilgedserodde.github.com/main/Grenen%20til%20Gedser%20Odde(1).gpx'; // URL to your GPX file or the GPX itself
+        var url = 'https://aggaar.github.io/grenentilgedserodde.github.com/Grenen%20til%20Gedser%20Odde(1).gpx'; // URL to your GPX file or the GPX itself
         new L.GPX(url, {async: true}).on('loaded', function(e) {
         map.fitBounds(e.target.getBounds());
         }).addTo(map);
@@ -155,6 +157,7 @@
         <hr>
 
         <h2 class="h" id="Downloads">Download</h2>
+        <a href="https://raw.githubusercontent.com/Aggaar/Grenen_Til_Gedser_Odde/refs/heads/main/Grenen%20til%20Gedser%20Odde(1).gpx" download>Download File</a>
         <hr>
 
 
@@ -165,3 +168,4 @@
     </div>
 </body>
        
+
