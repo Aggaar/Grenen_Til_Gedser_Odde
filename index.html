@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
     <style>
@@ -21,35 +22,35 @@
         }
 
         p {
-          
-          text-align: left;
+
+            text-align: left;
         }
 
         .p {
-          font-family: "Lucida Console", "Courier New", monospace;
-          color: whitesmoke
+            font-family: "Lucida Console", "Courier New", monospace;
+            color: whitesmoke
         }
-        
+
         /* Linkfarver */
 
         /* Ikke esøgt (Jeg endrede den, og nu ved jeg ikke hvad den startede på) */
         a:link {
-          color: rgb(86, 179, 255);
+            color: rgb(86, 179, 255);
         }
 
         /* Hover (Skal være det salle som link) */
         a:hover {
-          color: rgb(86, 179, 255);
+            color: rgb(86, 179, 255);
         }
 
         /* I gang med at klikke på (Jeg aner bare ikke hvorfor den er rød??) */
         a:active {
-          color: rgb(86, 179, 255);
+            color: rgb(86, 179, 255);
         }
 
         /* Besøgt (Jeg endre den da den basis lilla er for mørk) */
         a:visited {
-          color: rgb(100, 85, 185);
+            color: rgb(100, 85, 185);
         }
 
         /* Den store div der holder alt ind i midten */
@@ -84,88 +85,131 @@
             border-radius: 1vw;
         }
 
-        /*LEAFLET*/
-        #map { 
-            height: 500px
-            width: 100%;
-            aspect-ratio: 1 / 1;
+        * {
+            margin: 0;
+        }
+
+        #map {
+            height: 100vh;
             border-radius: 1vw;
         }
     </style>
     <title>Grenen til Gedser Odde</title>
-    <!-----------LEAFTLET----------------->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.min.js"></script>
-
 </head>
+
 <body>
     <div class="stor">
         <h1 class="h">Grenen til Gedser Odde</h1>
         <br>
         <h2 class="h" id="inspiration">Inspiration</h2>
         <hr>
-            <p class="p">Jeg gik i sommers <a href="https://www.kyst-kyststien.dk" target="_blank" rel="noopener noreferrer">Kyst til Kyst stien</a> med min far, det er en rute der går fra Blåvand til Vejle, ca. tværs over Jylland.</p>
-            <p class="p">Jeg blev inspireret af turen til at lave min egen rute der starter ved det nordligste sted i <b>Danmark</b>, <b>Nordstrand</b>, går forbi <b>Grenen</b> ved enden af <b>Jylland</b>, og slutter ved det sydligste punkt nemlig <b>Gedser odde</b>.</p>
-            <p class="p">Jeg ville have ruten til at være en flot varieret cykelrute, og helst gerne med lange stækninger der er markeret af andre ruter, så man kan følge deres skilte, men jeg ville stadig have ruten til at være relativt direkte så man føler at man kommer tættere på målet for hver dag.</p>
-        
+        <p class="p">Jeg gik i sommers <a href="https://www.kyst-kyststien.dk" target="_blank"
+                rel="noopener noreferrer">Kyst til Kyst stien</a> med min far, det er en rute der går fra Blåvand til
+            Vejle, ca. tværs over Jylland.</p>
+        <p class="p">Jeg blev inspireret af turen til at lave min egen rute der starter ved det nordligste sted i
+            <b>Danmark</b>, <b>Nordstrand</b>, går forbi <b>Grenen</b> ved enden af <b>Jylland</b>, og slutter ved det
+            sydligste punkt nemlig <b>Gedser odde</b>.
+        </p>
+        <p class="p">Jeg ville have ruten til at være en flot varieret cykelrute, og helst gerne med lange stækninger
+            der er markeret af andre ruter, så man kan følge deres skilte, men jeg ville stadig have ruten til at være
+            relativt direkte så man føler at man kommer tættere på målet for hver dag.</p>
+
         <h2 class="h" id="ruten">Rutens sammensætning</h2>
         <hr>
-            <p class="p"><b>Danmark</b> har et stort netværk af nationale cykelruter der strækker sig over hele landet.</p>
-            <p class="p">Alle ruterne er også afmærkeret med skilte med røde firkanter, og firkanterne er nummereret alt efter hvilken rute det er.</p>
+        <p class="p"><b>Danmark</b> har et stort netværk af nationale cykelruter der strækker sig over hele landet.</p>
+        <p class="p">Alle ruterne er også afmærkeret med skilte med røde firkanter, og firkanterne er nummereret alt
+            efter hvilken rute det er.</p>
 
-            <div class="lille">
-                <img class="billede" src="https://www.visitvejle.dk/sites/visitvejle.com/files/styles/hero/public/2019-10/ostkystruten-cyklist.jpg" alt="">
-                <p class="p"><strong>Foto:</strong> Kenneth Stjernegaard</p>
-            </div>
+        <div class="lille">
+            <img class="billede"
+                src="https://www.visitvejle.dk/sites/visitvejle.com/files/styles/hero/public/2019-10/ostkystruten-cyklist.jpg"
+                alt="">
+            <p class="p"><strong>Foto:</strong> Kenneth Stjernegaard</p>
+        </div>
 
-            
-            <div class="lille">
-                <img class="billede" src="https://via.ritzau.dk/data/images/00193/fa3085e9-2e7b-498a-99ae-2eb9340feaf1-w_960.jpg" alt="">
-                <p class="p"><strong>Grafik:</strong> Vejdirektoratet</p>
-            </div>
 
-            <p class="p">Hvis man vil helt ud til <b>Nordstrand</b> og <b>Grenen</b>, så kan man stille cyklen ved <b>Grenens parkeringsplads</b> og gå derud.</p>
-            <p class="p">Ellers starter ruten ved <b>parkeringspladsen ved Grenen</b> og derfra går den ad den aller nordligste del af <a href="https://ruter.dk/route/vestkystruten" target="_blank" rel="noopener noreferrer">Vestkystruten,</a> før man kommer til <b>Hulsig</b> hvor man cykler ad <a href="https://ruter.dk/route/oestkystruten" target="_blank" rel="noopener noreferrer">Østkystruten,</a> der tager en et langt stykke af vejen ned langs <b>Jyllands</b> østlige kyst.</p>
-            <p class="p">Ved <b>Fredericia</b> drejer ruten over på <b>Fyn</b> på <a href="https://ruter.dk/route/oestersoeruten" target="_blank" rel="noopener noreferrer">Østersøruten,</a> der går igennem <b>Svendborg</b> til <b>Langeland</b>, og så med færge til <b>Lolland</b>, hvorfra ruten så går til <b>Nykøbing Falster</b>.<br>
-            <em>(Østersøruten går igennem <b>Svendborg</b> på to forskellige leder, så man skal i <b>Svendborg</b>, på en måde skifte fra en del af ruten, til en anden del af den samme rute)</em></p>
-            <p class="p">Fra <b>Nykøbing Falster</b> går det af den orange nummer 9, den rute der hedder <a href="https://ruter.dk/route/gedser-helsingoer/" target="_blank" rel="noopener noreferrer">Gedser-Helsingør,</a> og den slutter i <b>Gedser</b> <em>sjovt nok</em> hvorfra der kun ca. 4 km. til målet ved <b>Gedser Odde</b>, som bare bliver kørt på landevej.</p>
-        
+        <div class="lille">
+            <img class="billede"
+                src="https://via.ritzau.dk/data/images/00193/fa3085e9-2e7b-498a-99ae-2eb9340feaf1-w_960.jpg" alt="">
+            <p class="p"><strong>Grafik:</strong> Vejdirektoratet</p>
+        </div>
+
+        <p class="p">Hvis man vil helt ud til <b>Nordstrand</b> og <b>Grenen</b>, så kan man stille cyklen ved
+            <b>Grenens parkeringsplads</b> og gå derud.
+        </p>
+        <p class="p">Ellers starter ruten ved <b>parkeringspladsen ved Grenen</b> og derfra går den ad den aller
+            nordligste del af <a href="https://ruter.dk/route/vestkystruten" target="_blank"
+                rel="noopener noreferrer">Vestkystruten,</a> før man kommer til <b>Hulsig</b> hvor man cykler ad <a
+                href="https://ruter.dk/route/oestkystruten" target="_blank" rel="noopener noreferrer">Østkystruten,</a>
+            der tager en et langt stykke af vejen ned langs <b>Jyllands</b> østlige kyst.</p>
+        <p class="p">Ved <b>Fredericia</b> drejer ruten over på <b>Fyn</b> på <a
+                href="https://ruter.dk/route/oestersoeruten" target="_blank" rel="noopener noreferrer">Østersøruten,</a>
+            der går igennem <b>Svendborg</b> til <b>Langeland</b>, og så med færge til <b>Lolland</b>, hvorfra ruten så
+            går til <b>Nykøbing Falster</b>.<br>
+            <em>(Østersøruten går igennem <b>Svendborg</b> på to forskellige leder, så man skal i <b>Svendborg</b>, på
+                en måde skifte fra en del af ruten, til en anden del af den samme rute)</em>
+        </p>
+        <p class="p">Fra <b>Nykøbing Falster</b> går det af den orange nummer 9, den rute der hedder <a
+                href="https://ruter.dk/route/gedser-helsingoer/" target="_blank"
+                rel="noopener noreferrer">Gedser-Helsingør,</a> og den slutter i <b>Gedser</b> <em>sjovt nok</em>
+            hvorfra der kun ca. 4 km. til målet ved <b>Gedser Odde</b>, som bare bliver kørt på landevej.</p>
+
         <h2 class="h" id="kort">Kort</h2>
         <hr>
-        
-        
-        <!-----------LEAFTLET----------------->
 
+        <!-----------LEAFTLET----------------->
+        <link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.min.css" rel="stylesheet">
+        </link>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/gpx.min.js"></script>
+        
         <div class="lille">
             <div id="map"></div>
         </div>
-        
-        <script>var map = L.map('map').setView([56.2, 10.6], 7);</script>
-        <script>L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);</script>
-        <!------GPX------->
         <script>
-        var url = 'https://aggaar.github.io/grenentilgedserodde.github.com/Grenen%20til%20Gedser%20Odde(1).gpx'; // URL to your GPX file or the GPX itself
-        new L.GPX(url, {async: true}).on('loaded', function(e) {
-        map.fitBounds(e.target.getBounds());
-        }).addTo(map);
-        </script>
+            const map = L.map('map');
 
+            new L.tileLayer(
+                'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                {maxZoom: 20, attribution: 'Maps and Data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }
+            ).addTo(map);
+
+            new L.GPX(
+                'Grenen til Gedser Odde(1).gpx',
+                {
+                    async: true,
+                   marker_options: {
+                        startIconUrl: 'https://cdn-icons-png.flaticon.com/512/447/447031.png',
+                        endIconUrl: 'https://cdn-icons-png.flaticon.com/512/447/447031.png',
+                        shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-shadow.png',
+                        iconAnchor: [15,30],
+                        shadowAnchor: [18,42],
+                        iconSize: [30,30]
+                    }
+                }
+            ).on('loaded', function (e) {
+                map.fitBounds(e.target.getBounds());
+            }).addTo(map);
+        </script>
 
 
         <h2 class="h" id="tillæg">Tillæg</h2>
         <hr>
 
         <h2 class="h" id="Downloads">Download</h2>
-        <a href="https://raw.githubusercontent.com/Aggaar/Grenen_Til_Gedser_Odde/refs/heads/main/Grenen%20til%20Gedser%20Odde(1).gpx" download>Download File</a>
+        <a href="https://raw.githubusercontent.com/Aggaar/Grenen_Til_Gedser_Odde/refs/heads/main/Grenen%20til%20Gedser%20Odde(1).gpx"
+            download>Download File</a>
         <hr>
 
 
-            <p class="p">Ruter downloaded fra <a href="https://ruter.dk/" target="_blank" rel="noopener noreferrer">ruter.dk</a> og <a href="https://waymarkedtrails.org/" target="_blank" rel="noopener noreferrer">waymarked trails</a></p>
-            <p class="p">Programmet jeg har brugt til at redigere ruterne hedder <a href="https://gpx.studio/gpx.studio/" target="_blank" rel="noopener noreferrer">gpx.studio</a></p>
-            <p class="p"><a href="https://www.kyst-kyststien.dk/" target="_blank" rel="noopener noreferrer">Kyst til Kyst stien</a></p>
-            <p class="p"><a href="https://github.com/mpetazzoni/leaflet-gpx" target="_blank" rel="noopener noreferrer">Leaflet</a></p>
+        <p class="p">Ruter downloaded fra <a href="https://ruter.dk/" target="_blank"
+                rel="noopener noreferrer">ruter.dk</a> og <a href="https://waymarkedtrails.org/" target="_blank"
+                rel="noopener noreferrer">waymarked trails</a></p>
+        <p class="p">Programmet jeg har brugt til at redigere ruterne hedder <a href="https://gpx.studio/gpx.studio/"
+                target="_blank" rel="noopener noreferrer">gpx.studio</a></p>
+        <p class="p"><a href="https://www.kyst-kyststien.dk/" target="_blank" rel="noopener noreferrer">Kyst til Kyst
+                stien</a></p>
+        <p class="p"><a href="https://github.com/mpetazzoni/leaflet-gpx" target="_blank"
+                rel="noopener noreferrer">Leaflet</a></p>
     </div>
 </body>
-       
-
