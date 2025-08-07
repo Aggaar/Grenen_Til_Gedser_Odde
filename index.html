@@ -1,99 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.4.0/gpx.min.js"></script>
-    <style>
-        body {
-            background-color: rgb(30, 29, 32);
-            text-align: center;
-        }
-
-        h1 {
-            color: whitesmoke;
-        }
-
-        h2 {
-            color: whitesmoke;
-            text-align: left;
-        }
-
-        .h {
-            font-family: "Lucida Console", "Courier New", monospace;
-        }
-
-        p {
-
-            text-align: left;
-        }
-
-        .p {
-            font-family: "Lucida Console", "Courier New", monospace;
-            color: whitesmoke
-        }
-
-        /* Linkfarver */
-
-        /* Ikke esøgt (Jeg endrede den, og nu ved jeg ikke hvad den startede på) */
-        a:link {
-            color: rgb(86, 179, 255);
-        }
-
-        /* Hover (Skal være det salle som link) */
-        a:hover {
-            color: rgb(86, 179, 255);
-        }
-
-        /* I gang med at klikke på (Jeg aner bare ikke hvorfor den er rød??) */
-        a:active {
-            color: rgb(86, 179, 255);
-        }
-
-        /* Besøgt (Jeg endre den da den basis lilla er for mørk) */
-        a:visited {
-            color: rgb(100, 85, 185);
-        }
-
-        /* Den store div der holder alt ind i midten */
-        div.stor {
-            width: 60%;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-            height: auto;
-            margin-top: 100px;
-            margin-bottom: 100px;
-        }
-
-        /* Den lille div der holder billederne og deres kilde */
-        div.lille {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 30px;
-            margin-bottom: 70px;
-        }
-
-        /* Alle billederne */
-        img.billede {
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            height: auto;
-            object-fit: fill;
-            border-radius: 1vw;
-        }
-
-        * {
-            margin: 0;
-        }
-
-        #map {
-            height: 100vh;
-            border-radius: 1vw;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <title>Grenen til Gedser Odde</title>
 </head>
 
@@ -162,7 +70,7 @@
         </link>
         <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/gpx.min.js"></script>
-        
+
         <div class="lille">
             <div id="map"></div>
         </div>
@@ -171,20 +79,20 @@
 
             new L.tileLayer(
                 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-                {maxZoom: 20, attribution: 'Maps and Data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }
+                { maxZoom: 20, attribution: 'Maps and Data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' }
             ).addTo(map);
 
             new L.GPX(
                 'Grenen til Gedser Odde.gpx',
                 {
                     async: true,
-                   marker_options: {
+                    marker_options: {
                         startIconUrl: 'https://cdn-icons-png.flaticon.com/512/447/447031.png',
                         endIconUrl: 'https://cdn-icons-png.flaticon.com/512/447/447031.png',
                         shadowUrl: 'https://cdn.jsdelivr.net/npm/leaflet-gpx@1.7.0/pin-shadow.png',
-                        iconAnchor: [15,30],
-                        shadowAnchor: [18,42],
-                        iconSize: [30,30]
+                        iconAnchor: [15, 30],
+                        shadowAnchor: [18, 42],
+                        iconSize: [30, 30]
                     }
                 }
             ).on('loaded', function (e) {
@@ -193,7 +101,7 @@
         </script>
 
 
-        <h2 class="h" id="tillæg">Tillæg</h2>
+        <h2 class="h" id="tillæg">Tillæger</h2>
         <hr>
 
         <h2 class="h" id="Downloads">Download</h2>

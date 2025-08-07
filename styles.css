@@ -1,0 +1,89 @@
+    body {
+        background-color: rgb(30, 29, 32);
+        text-align: center;
+    }
+
+    h1 {
+        color: whitesmoke;
+    }
+
+    h2 {
+        color: whitesmoke;
+        text-align: left;
+    }
+
+    .h {
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    .p {
+        font-family: "Lucida Console", "Courier New", monospace;
+        color: whitesmoke
+    }
+
+    /* Linkfarver */
+
+    /* Ikke esøgt (Jeg endrede den, og nu ved jeg ikke hvad den startede på) */
+    a:link {
+        color: rgb(86, 179, 255);
+    }
+
+    /* Hover (Skal være det salle som link) */
+    a:hover {
+        color: rgb(86, 179, 255);
+    }
+
+    /* I gang med at klikke på (Jeg aner bare ikke hvorfor den er rød??) */
+    a:active {
+        color: rgb(86, 179, 255);
+    }
+
+    /* Besøgt (Jeg endre den da den basis lilla er for mørk) */
+    a:visited {
+        color: rgb(100, 85, 185);
+    }
+
+    /* Den store div der holder alt ind i midten */
+    div.stor {
+        width: 60%;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    /* Den lille div der holder billederne og deres kilde */
+    div.lille {
+        max-width: 600px;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        margin-bottom: 70px;
+    }
+
+    /* Alle billederne */
+    img.billede {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        object-fit: fill;
+        border-radius: 1vw;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    #map {
+        height: 100vh;
+        border-radius: 1vw;
+    }
